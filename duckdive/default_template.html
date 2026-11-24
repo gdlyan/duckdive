@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<style>
+  body{margin:0;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:#fafafa;color:#27272a}
+  .dd-page{max-width:1280px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 4px;font-weight:650}
+  @media (prefers-color-scheme: dark){body{background:#0c0c0e;color:#e4e4e7}}
+  @media print{body{padding:0;background:#fff}}
+</style>
+</head>
+<body>
+<div class="dd-page">
+  <h1>{{ title }}</h1>
+  {{ duckdive_table }}
+</div>
+</body>
+</html>

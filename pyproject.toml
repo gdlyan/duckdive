@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "duckdive"
+version = "0.2.0"
+description = "Turn a pandas DataFrame into a single self-contained HTML file with an interactive SQL-native data table. No server, no network, no CDNs."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["duckdb", "pandas", "numpy", "jinja2"]
+
+[tool.setuptools]
+packages = ["duckdive"]
+
+[tool.setuptools.package-data]
+duckdive = ["assets/xlsx.full.min.js", "assets/wasm/*", "default_template.html"]

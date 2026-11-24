@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DuckDive — demos</title>
+<style>
+  body{margin:0;padding:40px 24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:#fafafa;color:#27272a}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 6px}
+  .sub{color:#71717a;margin-bottom:28px}
+  .card{display:block;border:1px solid #e4e4e7;border-radius:12px;padding:18px 20px;margin:12px 0;background:#fff;text-decoration:none;color:inherit;transition:box-shadow .15s}
+  .card:hover{box-shadow:0 6px 24px rgba(0,0,0,.08)}
+  .card h2{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:#71717a;font-size:13.5px;line-height:1.55}
+  .tag{display:inline-block;font-size:11px;border:1px solid #ffd8a8;background:#fff4e6;color:#d9480f;border-radius:12px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+  code{background:#f4f4f5;border-radius:4px;padding:1px 5px;font-size:12.5px}
+  @media (prefers-color-scheme: dark){
+    body{background:#0c0c0e;color:#e4e4e7}
+    .card{background:#18181b;border-color:#3f3f46}
+    .card p,.sub{color:#a1a1aa}
+    code{background:#27272a}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>DuckDive</h1>
+  <p class="sub">A Python library that turns a pandas DataFrame into a single self-contained HTML file with a fully interactive, SQL-native data table. Every demo below is one <code>.html</code> — data, UI and logic, no server, no network.</p>
+
+  <a class="card" href="demo-json.html">
+    <h2>Sales demo — JSON mode <span class="tag">1,200 rows</span></h2>
+    <p>Custom template with two cross-filtered tables (raw + grouped SQL view), four live SQL labels, standalone filter buttons and exclusion toggles. All operations run client-side on embedded JSON.</p>
+  </a>
+
+  <a class="card" href="demo-wasm-200k.html">
+    <h2>Sales demo — WASM mode <span class="tag">200,000 rows</span></h2>
+    <p>Same template, but data lives in an embedded parquet queried by duckdb-wasm in a Web Worker: search, filters, sorting, paging and export all run as SQL in the browser. Scales to millions of rows.</p>
+  </a>
+
+  <a class="card" href="demo-wasm-rowatoms.html">
+    <h2>Row atoms, cell popups &amp; redaction <span class="tag">WASM</span></h2>
+    <p>Select rows in the first table and the grouped view below filters to the selected regions (<code>use_filter_keys</code>). Click a product cell for a custom formatter popup. The <code>channel</code> column is masked at build time — raw values never reach the HTML.</p>
+  </a>
+
+  <a class="card" href="demo-multi-table.html">
+    <h2>Multi-table + bound params <span class="tag">JSON</span></h2>
+    <p><code>DuckDive({"t": orders, "regions": managers})</code> — a SQL view JOINs two registered tables, and <code>:min_amt</code> is bound at build time for per-recipient reports.</p>
+  </a>
+</div>
+</body>
+</html>
